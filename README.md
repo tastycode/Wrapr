@@ -37,7 +37,7 @@ Use with ruby-debug to set conditional break points
 
 
 Wrap existing classes in logging functionality 
-Mirror object modifications?
+Mirror object modifications?, if there were no such this as :after_save
     
     # given there is a post class in active record
 
