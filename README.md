@@ -26,9 +26,22 @@ Use with ruby-debug to set conditional break points
     require 'ruby-debug'
     Wrapr::Wrapr.new(Post).before(:find) do |this,*args|
         # Open debug when a post is instantiated 
-        debugger if args[:conditions][:
+        # whose attribute "body" contains scrooge
+        debugger if args[:body] =~ /scrooge/
         args
     end
 
-Use with analytics packages to track application events from a single location
 
+Wrap existing classes in logging functionality 
+Mirror object modifications?
+    
+    # given there is a post class in active record
+
+    w = Wrapr::Wrapr.new(Post)
+    w.after(:save) do |this,*args|
+      if this.new?
+        SomeAlternateDatabaseModel.new(this.attributes).save 
+      else
+        SomeAlternateDatabaseModel.find(this.id).update_attributes(this.attributes)
+      end
+    end
