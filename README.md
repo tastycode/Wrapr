@@ -17,6 +17,10 @@ Example
 
   5/0 # we can hijack any class's instance methods and inject our own functionality
 
+Installation
+------------
+
+    $ gem install wrapr
 
 Potential Uses
 --------------
@@ -45,3 +49,10 @@ Mirror object modifications?
         SomeAlternateDatabaseModel.find(this.id).update_attributes(this.attributes)
       end
     end
+
+Tested Versions
+---------------
+
+* ruby-1.9.2, 
+* ruby-1.8.7
+* jruby-1.6.4
