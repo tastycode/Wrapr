@@ -15,7 +15,7 @@ Example
       args
     end
 
-  5/0 # we can hijack any class's instance methods and inject our own functionality
+    5/0 # we can hijack any class's instance methods and inject our own functionality
 
 Installation
 ------------
